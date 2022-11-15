@@ -1,7 +1,6 @@
 import os
 import pathlib
 import csv
-import click
 
 
 class Client(object):
@@ -123,4 +122,4 @@ while True:
             break
         case _:
             continue
-    click.pause()
+    input()
