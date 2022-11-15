@@ -136,3 +136,4 @@ while True:
         case _:
             continue
     click.pause()
+# изменение 1
