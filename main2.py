@@ -109,17 +109,14 @@ while True:
         os.system('cls')
         continue
     os.system('cls')
-    match (choice):
-        case 1:
-            client.show()
-        case 2:
-            client.add()
-        case 3:
-            client.change()
-        case 4:
-            client.delete()
-        case 0:
-            break
-        case _:
-            continue
+    if (choice == 1):
+        client.show()
+    elif (choice == 2):
+        client.add()
+    elif (choice == 3):
+        client.change()
+    elif (choice == 4):
+        client.delete()
+    elif (choice == 0):
+        exit()
     input()
