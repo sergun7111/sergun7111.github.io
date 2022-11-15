@@ -135,4 +135,4 @@ while True:
             break
         case _:
             continue
-    click.pause()
+    click.pause() #Комментарий
