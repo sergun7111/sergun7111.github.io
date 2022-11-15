@@ -86,6 +86,13 @@ class Client(object):
                 writer = csv.DictWriter(file, fieldnames=[*self.features.keys()], delimiter=';')
                 writer.writerows(cars)
             print("Запись удалена")
+    def git(self):
+        with open(self.database_path, 'r', newline='') as file:
+            reader = csv.DictReader(file, fieldnames=[*self.features.keys()], delimiter=';')
+            i = 0
+            for row in reader:
+                i += 1
+            print(f"Всего записей: {i}")
     
 client = Client(
     features={"color": "Цвет", "model": "Модель", "engine volume": "Объем двигателя", "gear box": 'КПП',
@@ -101,7 +108,7 @@ while True:
     print("2) Добавить новую запись")
     print("3) Изменить необходимую запись")
     print("4) Удалить указанную запись")
-
+    print("5) Вывести количество записей")
     print("0) Завершить работу программы")
     try:
         choice = int(input("Введите необходимые пункт - "))
@@ -117,6 +124,8 @@ while True:
         client.change()
     elif (choice == 4):
         client.delete()
+    elif (choice == 5):
+        client.git()
     elif (choice == 0):
         exit()
     input()
